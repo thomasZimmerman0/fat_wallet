@@ -48,4 +48,4 @@ console.log(budget.userId);
 console.log(budget.incomes);
 console.log(budget.expenses);
 console.log(budget.categories);
-console.log("what");
+console.log("howdy yall");
