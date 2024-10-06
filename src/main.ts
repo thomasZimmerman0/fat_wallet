@@ -1,7 +1,9 @@
-import { User } from "./classes/user";
+import Header from "./reusable-html-components/header"
+
+import  User  from "./classes/user";
 import { UserId } from "./types/user-types";
-import { Budget } from "./classes/budget";
-import { BudgetCategories } from "./classes/budget-categories";
+import  Budget  from "./classes/budget";
+import  BudgetCategories  from "./classes/budget-categories";
 import { MonetaryBudgetItem } from "./types/budget-types";
 
 const user1Id: UserId = { ID: 1};
@@ -25,7 +27,7 @@ const expenses: MonetaryBudgetItem[] = [
         category: categoryList[1],
         amount: 102
     },
-];
+]; 
 
 const incomes: MonetaryBudgetItem[] = [
     {
@@ -38,7 +40,9 @@ const incomes: MonetaryBudgetItem[] = [
         category: categoryList[4],
         amount: 150
     },
-]
+];
+
+const header = new Header();
 
 const user1 = new User(user1Id, "Tommy", "Zimmerman");
 const userCategories = new BudgetCategories(user1Id, categoryList);

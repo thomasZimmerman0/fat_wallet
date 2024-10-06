@@ -1,8 +1,8 @@
 import { MonetaryBudgetItem } from "../types/budget-types";
 import { UserId } from "../types/user-types";
-import { BudgetCategories } from "./budget-categories";
+import  BudgetCategories  from "./budget-categories";
 
-export class Budget {
+export default class Budget {
     public userId: UserId;
     public incomes: MonetaryBudgetItem[];
     public expenses: MonetaryBudgetItem[];

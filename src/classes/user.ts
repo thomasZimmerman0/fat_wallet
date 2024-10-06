@@ -1,6 +1,6 @@
-import { UserId } from "../types/user-types";
+import { UserId } from "../types/user-types"; 
 
-export class User {
+export default class User {
     public userId: UserId;
     public firstName: string;
     public lastName: string;

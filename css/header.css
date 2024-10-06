@@ -1,0 +1,11 @@
+.layout-header {
+    position: absolute;
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+}
+
+.layout-header nav ul li{
+    color: white;
+}
+

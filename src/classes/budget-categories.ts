@@ -1,6 +1,6 @@
 import { UserId } from "../types/user-types";
 
-export class BudgetCategories {
+export default class BudgetCategories {
     private userId: UserId;
     public categoryList: string[]
 
