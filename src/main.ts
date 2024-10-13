@@ -1,11 +1,20 @@
+//HTML Components
 import Header from "./reusable-html-components/header"
 
+//Data and types
 import  User  from "./classes/user";
 import { UserId } from "./types/user-types";
 import  Budget  from "./classes/budget";
 import  BudgetCategories  from "./classes/budget-categories";
 import { MonetaryBudgetItem } from "./types/budget-types";
 
+//Append necessary HTML componenets
+const headerInstance = new Header();
+let headerElement = headerInstance.getElement() as Element;
+document.body.insertAdjacentElement("afterbegin", headerElement);
+console.log("What");
+
+//Set user data ( Only for testing )
 const user1Id: UserId = { ID: 1};
 const categoryList = [
     "Food",
@@ -42,7 +51,6 @@ const incomes: MonetaryBudgetItem[] = [
     },
 ];
 
-const header = new Header();
 
 const user1 = new User(user1Id, "Tommy", "Zimmerman");
 const userCategories = new BudgetCategories(user1Id, categoryList);

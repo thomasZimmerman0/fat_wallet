@@ -29,4 +29,18 @@ export default class Header {
         }
     }
 
+    getElement(): HTMLElement | null {
+        if(this.HTML == undefined){
+            throw new Error("The HTML for the header is currently undefined");
+        } else {
+            let wrapper: HTMLElement = document.createElement("div") as HTMLElement;
+            wrapper.innerHTML = this.HTML;
+            if(wrapper != null){
+                return wrapper.firstElementChild as HTMLElement;
+            } else {
+                return null;
+            }
+        }
+    }
+
 }
