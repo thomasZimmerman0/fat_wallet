@@ -1,12 +1,14 @@
-export default class Header {
+import Reusable_Componenet from "./reusable-component";
+export default class Header extends Reusable_Componenet {
 
-    constructor(private HTML?: string, private stylePage?: string) {
-        if(this.stylePage == undefined){
-            this.stylePage = "../css/header.css";
+    constructor(HTML?: string, styleSheetHref?: string) {
+        if(styleSheetHref == undefined){
+            styleSheetHref = "../css/header.css";
         }
-        if(this.HTML == undefined){
-            this.HTML = /*html*/`
-            <header>
+        if(HTML == undefined){
+            HTML = /*html*/`
+            <header class="layout-header">
+                <img class="header-logo" src="../assets/logo-placeholder.png" alt="logo">
                 <ul class="header-links">
                     <li>Home</li>
                     <li>Budget Builder</li>
@@ -15,32 +17,6 @@ export default class Header {
             </header>
             `
         }
+        super(HTML, styleSheetHref);
     }
-
-    setHTML(newHTML: string): void {
-        this.HTML = newHTML;
-    }
-
-    getHTML(): string {
-        if(this.HTML == undefined){
-            throw new Error("The HTML for the header is currently undefined");
-        } else {
-            return this.HTML;
-        }
-    }
-
-    getElement(): HTMLElement | null {
-        if(this.HTML == undefined){
-            throw new Error("The HTML for the header is currently undefined");
-        } else {
-            let wrapper: HTMLElement = document.createElement("div") as HTMLElement;
-            wrapper.innerHTML = this.HTML;
-            if(wrapper != null){
-                return wrapper.firstElementChild as HTMLElement;
-            } else {
-                return null;
-            }
-        }
-    }
-
 }

@@ -12,6 +12,10 @@ import { MonetaryBudgetItem } from "./types/budget-types";
 const headerInstance = new Header();
 let headerElement = headerInstance.getElement() as Element;
 document.body.insertAdjacentElement("afterbegin", headerElement);
+
+const headerStyles = headerInstance.getStylesheetElement() as Element;
+document.head.insertAdjacentElement("beforeend", headerStyles);
+
 console.log("What");
 
 //Set user data ( Only for testing )
