@@ -1,8 +1,9 @@
 .layout-header {
     display: flex;
-    position: absolute;
+    position: sticky;
+    top: 0px;
     width: 100%;
-    height: 20vh;
+    height: 10vh;
     background-color: black;
 }
 
@@ -14,6 +15,7 @@
 .header-links {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 50%;
 }
 

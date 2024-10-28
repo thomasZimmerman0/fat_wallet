@@ -2,6 +2,7 @@ export default class Reusable_Componenet {
 
     private HTML: string;
     private styleSheet: string;
+    private appendedElements: HTMLElement[] = [];
 
     constructor(HTML: string, styleSheetHref: string) {
         this.HTML = HTML;
@@ -60,6 +61,23 @@ export default class Reusable_Componenet {
                 return null;
             }
         }
+    }
+
+    appendElementAndStylesheetToDocument(position: "beforebegin" | "afterbegin" | "beforeend" | "afterend") {
+        let htmlElement = this.getElement();
+        let styleSheetElement = this.getStylesheetElement();
+        if(htmlElement == null || styleSheetElement == null){
+            throw new Error("Recieved null for stylesheet element or html element");
+        }
+        this.appendedElements.push(htmlElement, styleSheetElement);
+        document.body.insertAdjacentElement(position, htmlElement);
+        document.head.insertAdjacentElement("beforeend", styleSheetElement);
+    }
+
+    removeAppendedElements(){
+        this.appendedElements.forEach( element => {
+            element.remove();
+        });
     }
 
 }
